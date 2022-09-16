@@ -1,3 +1,4 @@
+kubectl create namespace pg-stolon
 kubectl apply -f role-binding.yaml
 kubectl apply -f role.yaml
 kubectl run -i -t stolonctl --image=sorintlab/stolon:master-pg14 --restart=Never --rm -- /usr/local/bin/stolonctl --cluster-name=kube-stolon --store-backend=kubernetes --kube-resource-kind=configmap init
