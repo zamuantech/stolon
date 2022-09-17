@@ -5,7 +5,8 @@ kubectl run -n pg-stolon -i -t stolonctl --image=sorintlab/stolon:master-pg14 --
 kubectl create -f stolon-sentinel.yaml -n pg-stolon
 kubectl create -f secret.yaml -n pg-stolon
 kubectl create -f stolon-keeper.yaml -n pg-stolon
+sleep 60
 kubectl create -f stolon-proxy.yaml -n pg-stolon
 kubectl create -f stolon-proxy-service.yaml -n pg-stolon
-sleep 60
+sleep 30
 kubectl get all -n pg-stolon
