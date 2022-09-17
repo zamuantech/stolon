@@ -5,10 +5,10 @@ kubectl run -n pg-stolon -i -t stolonctl --image=sorintlab/stolon:master-pg14 --
 kubectl create -f stolon-sentinel.yaml -n pg-stolon
 kubectl create -f secret.yaml -n pg-stolon
 kubectl create -f stolon-keeper.yaml -n pg-stolon
-echo "waiting 60s . . ."
-sleep 60
-kubectl create -f stolon-proxy.yaml -n pg-stolon
-kubectl create -f stolon-proxy-service.yaml -n pg-stolon
 echo "waiting 30s . . ."
 sleep 30
+kubectl create -f stolon-proxy.yaml -n pg-stolon
+kubectl create -f stolon-proxy-service.yaml -n pg-stolon
+echo "waiting 10s . . ."
+sleep 10
 kubectl get all -n pg-stolon
